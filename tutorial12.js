@@ -1,5 +1,5 @@
 /*
-    BELAJAR 
+    BELAJAR GROUP AND MERGE
 */
 import * as THREE from 'three';
 import * as GSAP from 'gsap';
@@ -15,8 +15,8 @@ scene.background = new THREE.Color(0xffffff);
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.BasicShadowMap;
-camera.position.z = 20;
-camera.position.y = 5;
+camera.position.z = 50;
+camera.position.y = 10;
 // camera.position.x = -75;
 document.body.appendChild(renderer.domElement);
 
@@ -44,7 +44,7 @@ scene.add(grid);
 
 let controls = new OrbitControls(camera, renderer.domElement);
 
-let cube = new THREE.BoxGeometry(1, 1, 1)
+let cube = new THREE.BoxGeometry(3, 3, 3)
 let math = new THREE.MeshStandardMaterial({ color: 0xff00ff })
 
 let cube1 = new THREE.Mesh(cube, math)
@@ -52,9 +52,10 @@ let cube2 = new THREE.Mesh(cube, math)
 let cube3 = new THREE.Mesh(cube, math)
 let cube4 = new THREE.Mesh(cube, math)
 
-cube2.position.set(2, 0, 0)
-cube3.position.set(-2, 0, 0)
-cube4.position.set(0, 2, 0)
+cube1.position.set(0, 1, 0)
+cube2.position.set(6, 1, 0)
+cube3.position.set(-6, 1, 0)
+cube4.position.set(0, 6, 0)
 
 scene.add(cube1)
 scene.add(cube2)
@@ -76,7 +77,6 @@ function draw() {
     cube4.rotation.y -= 0.01
     group.rotation.y -= 0.02
 
-    // Membuat fungsi draw terus berjalan secara rekursif
     requestAnimationFrame(draw);
 
     renderer.render(scene, camera);
