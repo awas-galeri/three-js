@@ -42,10 +42,11 @@ var grid = new THREE.GridHelper(100, 20, 0x000000, 0x000000);
 grid.position.y = -0.5
 scene.add(grid);
 
-let controls = new OrbitControls(camera, renderer.domElement);
+
+new OrbitControls(camera, renderer.domElement);
 
 let cube = new THREE.BoxGeometry(3, 3, 3)
-let math = new THREE.MeshStandardMaterial({ color: 0xff00ff })
+let math = new THREE.MeshStandardMaterial({ color: 0xffa0ff })
 
 let cube1 = new THREE.Mesh(cube, math)
 let cube2 = new THREE.Mesh(cube, math)
